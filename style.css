@@ -1,0 +1,639 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap');
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --primary: #E8458B;
+  --primary-light: #FFF0F5;
+  --primary-soft: #F9D1E0;
+  --primary-dark: #C93578;
+  --race: #D97706;
+  --race-light: #FEF9EE;
+  --race-dark: #92400E;
+  --bg: #FFFFFF;
+  --card: #F7F3F5;
+  --text: #1A1A1A;
+  --text-secondary: #7A7A7A;
+  --text-tertiary: #B0B0B0;
+  --border: #EDE4E8;
+  --separator: #F5F0F2;
+}
+
+html { height: 100%; }
+
+body {
+  font-family: 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.55;
+  -webkit-font-smoothing: antialiased;
+  -webkit-text-size-adjust: 100%;
+  min-height: 100%;
+  padding-bottom: env(safe-area-inset-bottom);
+}
+
+/* ── Hero ── */
+.hero {
+  background: var(--bg);
+  color: var(--text);
+  padding: calc(env(safe-area-inset-top, 20px) + 1.25rem) 1.5rem 1rem;
+}
+
+.hero-inner {
+  position: relative;
+}
+
+.hero-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.greeting-line {
+  font-size: 1.35rem;
+  color: var(--text-secondary);
+  font-weight: 400;
+}
+
+.greeting-line strong {
+  color: var(--text);
+  font-weight: 700;
+}
+
+.avatar {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  object-fit: cover;
+  flex-shrink: 0;
+  background: var(--card);
+}
+
+/* ── Container ── */
+.container {
+  max-width: 500px;
+  margin: 0 auto;
+  padding: 0.5rem 1rem 2rem;
+}
+
+/* ── Race Banner ── */
+.race-banner {
+  border-radius: 20px;
+  overflow: hidden;
+  position: relative;
+  margin-bottom: 1rem;
+}
+
+.banner-img {
+  width: 100%;
+  height: 170px;
+  object-fit: cover;
+  display: block;
+}
+
+.banner-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  padding: 1rem;
+  background: linear-gradient(to top, rgba(0,0,0,0.65) 0%, transparent 100%);
+  color: #fff;
+}
+
+.banner-race {
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+.banner-date {
+  font-size: 0.75rem;
+  opacity: 0.85;
+  margin-top: 2px;
+}
+
+.countdown-badge {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: var(--primary);
+  border-radius: 14px;
+  padding: 0.45rem 0.7rem;
+  min-width: 50px;
+  flex-shrink: 0;
+}
+
+.countdown-number {
+  font-size: 1.35rem;
+  font-weight: 800;
+  line-height: 1;
+  letter-spacing: -0.03em;
+  color: #fff;
+}
+
+.countdown-label {
+  font-size: 0.5rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  opacity: 0.85;
+  margin-top: 2px;
+  color: #fff;
+  font-weight: 600;
+}
+
+/* ── Objective ── */
+.objective-bar {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+  background: var(--card);
+  padding: 0.75rem 1rem;
+  border-radius: 14px;
+  margin-bottom: 0.625rem;
+}
+
+.objective-icon {
+  font-size: 0.9rem;
+}
+
+/* ── Motivation ── */
+.motivation {
+  text-align: center;
+  padding: 0.625rem 0.5rem 0.875rem;
+  font-size: 0.78rem;
+  color: var(--primary);
+  font-style: italic;
+  line-height: 1.5;
+}
+
+/* ── Progress ── */
+.progress-section {
+  background: var(--card);
+  border-radius: 16px;
+  padding: 1rem 1.125rem;
+  margin-bottom: 1.25rem;
+}
+
+.progress-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.625rem;
+}
+
+.progress-label {
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--text);
+}
+
+.progress-count {
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: var(--primary);
+}
+
+.progress-bar {
+  width: 100%;
+  height: 8px;
+  background: var(--border);
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.progress-fill {
+  height: 100%;
+  width: 0%;
+  background: linear-gradient(90deg, var(--primary), #F48FB1);
+  border-radius: 4px;
+  transition: width 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* ── Segment Control ── */
+.segment-control {
+  display: flex;
+  background: var(--card);
+  border-radius: 12px;
+  padding: 3px;
+  margin-bottom: 1.25rem;
+}
+
+.segment-btn {
+  flex: 1;
+  padding: 0.55rem 0;
+  border: none;
+  background: none;
+  font-family: 'Poppins', sans-serif;
+  font-size: 0.82rem;
+  font-weight: 500;
+  color: var(--text-secondary);
+  border-radius: 10px;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+  transition: all 0.25s ease;
+}
+
+.segment-btn.active {
+  background: var(--primary);
+  color: #fff;
+  font-weight: 600;
+  box-shadow: 0 2px 8px rgba(232, 69, 139, 0.25);
+}
+
+/* ── Tabs ── */
+.tab-content {
+  display: none;
+}
+
+.tab-content.active {
+  display: block;
+}
+
+/* ── Today view ── */
+.today-header {
+  display: flex;
+  align-items: baseline;
+  gap: 0.4rem;
+  margin-bottom: 0.75rem;
+}
+
+.today-week {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--text);
+}
+
+.today-theme {
+  font-size: 0.75rem;
+  color: var(--text-secondary);
+}
+
+.rest-day {
+  text-align: center;
+  padding: 3rem 1.5rem;
+  background: var(--card);
+  border-radius: 16px;
+}
+
+.rest-emoji {
+  font-size: 2.5rem;
+  margin-bottom: 0.75rem;
+}
+
+.rest-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--text);
+  margin-bottom: 0.375rem;
+}
+
+.rest-desc {
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+  line-height: 1.5;
+}
+
+/* ── Week Picker ── */
+.week-picker {
+  display: flex;
+  gap: 0.375rem;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  padding-bottom: 0.5rem;
+  margin-bottom: 1rem;
+  scrollbar-width: none;
+}
+
+.week-picker::-webkit-scrollbar {
+  display: none;
+}
+
+.week-pill {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.15rem;
+  padding: 0.5rem 0.6rem;
+  border-radius: 12px;
+  border: 1.5px solid var(--border);
+  background: var(--card);
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+  transition: all 0.2s ease;
+  flex-shrink: 0;
+  min-width: 48px;
+  font-family: 'Poppins', sans-serif;
+}
+
+.week-pill.current {
+  border-color: var(--primary-soft);
+}
+
+.week-pill.selected {
+  background: var(--primary);
+  border-color: var(--primary);
+}
+
+.week-pill.selected .pill-label,
+.week-pill.selected .pill-count {
+  color: #fff;
+}
+
+.week-pill.complete:not(.selected) {
+  border-color: var(--primary-soft);
+  background: var(--primary-light);
+}
+
+.week-pill.race {
+  border-color: var(--race);
+}
+
+.week-pill.race.selected {
+  background: var(--race);
+  border-color: var(--race);
+}
+
+.pill-label {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--text);
+}
+
+.pill-count {
+  font-size: 0.6rem;
+  color: var(--text-tertiary);
+  font-weight: 500;
+}
+
+.week-pill.complete .pill-count {
+  color: var(--primary);
+}
+
+/* ── Programme header ── */
+.programme-header {
+  margin-bottom: 0.75rem;
+}
+
+.programme-title {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--text);
+}
+
+.programme-dates {
+  font-size: 0.72rem;
+  color: var(--text-secondary);
+  margin-top: 1px;
+}
+
+/* ── Sessions list (programme) ── */
+#week-sessions {
+  display: flex;
+  flex-direction: column;
+  gap: 0.625rem;
+}
+
+/* ── Session Card ── */
+.session-card {
+  background: var(--bg);
+  border-radius: 14px;
+  padding: 0.875rem 1rem;
+  transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+  border: 1.5px solid var(--border);
+  position: relative;
+  overflow: hidden;
+}
+
+.session-card.done {
+  background: var(--primary-light);
+  border-color: var(--primary);
+  opacity: 0.55;
+}
+
+.session-card.done .session-title {
+  text-decoration: line-through;
+  text-decoration-color: var(--text-tertiary);
+}
+
+/* Keep full opacity during celebrate animation */
+.session-card.done.celebrate {
+  opacity: 1;
+}
+
+.session-card.race-session {
+  background: #FFF8ED;
+  box-shadow: 0 0 0 1.5px var(--race);
+}
+
+.session-card.race-session.done {
+  background: #FFF8ED;
+  border-color: var(--race);
+}
+
+/* ── Done banner ── */
+.done-banner {
+  display: none;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 0.5rem;
+  padding: 0.5rem 0.65rem;
+  background: linear-gradient(135deg, var(--primary), #F06292);
+  border-radius: 10px;
+  color: #fff;
+  font-size: 0.78rem;
+  font-weight: 600;
+  animation: bannerSlide 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.session-card.done .done-banner {
+  display: flex;
+}
+
+@keyframes bannerSlide {
+  from { opacity: 0; transform: translateY(8px) scale(0.95); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+/* ── Confetti burst ── */
+.confetti-container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  pointer-events: none;
+  z-index: 10;
+}
+
+.confetti {
+  position: absolute;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  animation: confettiBurst 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+  opacity: 0;
+}
+
+@keyframes confettiBurst {
+  0% { opacity: 1; transform: translate(0, 0) scale(1); }
+  100% { opacity: 0; transform: var(--confetti-end) scale(0); }
+}
+
+/* ── Card glow pulse on check ── */
+.session-card.celebrate {
+  animation: glowPulse 0.6s ease;
+}
+
+@keyframes glowPulse {
+  0% { box-shadow: 0 0 0 0 rgba(232, 69, 139, 0.4); }
+  50% { box-shadow: 0 0 0 10px rgba(232, 69, 139, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(232, 69, 139, 0); }
+}
+
+.session-day-header {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  margin-bottom: 0.5rem;
+}
+
+.session-day-name {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--text);
+}
+
+.badge {
+  font-size: 0.6rem;
+  font-weight: 600;
+  padding: 0.15rem 0.45rem;
+  border-radius: 6px;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.badge-f {
+  background: #FCE4EC;
+  color: #C2185B;
+}
+
+.badge-q {
+  background: #EDE7F6;
+  color: #7B1FA2;
+}
+
+.badge-l {
+  background: #FFF3E0;
+  color: #E65100;
+}
+
+.badge-r {
+  background: var(--race);
+  color: #fff;
+}
+
+.session-details {
+  font-size: 0.7rem;
+  color: var(--text-tertiary);
+  margin-left: auto;
+  font-weight: 400;
+}
+
+.session-title {
+  font-size: 0.9rem;
+  font-weight: 600;
+  margin-bottom: 0.4rem;
+  color: var(--text);
+}
+
+.pace-block {
+  background: var(--card);
+  border-left: 3px solid var(--primary-soft);
+  padding: 0.5rem 0.65rem;
+  font-family: "SF Mono", "Menlo", "Consolas", monospace;
+  font-size: 0.72rem;
+  border-radius: 0 10px 10px 0;
+  margin-bottom: 0.5rem;
+  color: var(--text);
+  font-weight: 500;
+  line-height: 1.4;
+}
+
+.session-card.race-session .pace-block {
+  border-left-color: var(--race);
+  background: rgba(255,255,255,0.7);
+}
+
+.session-desc {
+  font-size: 0.75rem;
+  color: var(--text-secondary);
+  line-height: 1.55;
+  margin-bottom: 0.75rem;
+}
+
+/* ── Check Button ── */
+.session-check {
+  display: flex;
+  width: 100%;
+  cursor: pointer;
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.session-check input[type="checkbox"] {
+  display: none;
+}
+
+.check-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  width: 100%;
+  padding: 0.65rem;
+  border-radius: 10px;
+  border: 1.5px solid var(--primary-soft);
+  background: var(--primary-light);
+  font-family: 'Poppins', sans-serif;
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: var(--primary);
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.session-check input:checked ~ .check-btn {
+  background: var(--primary);
+  border-color: var(--primary);
+  color: #fff;
+  font-weight: 600;
+  animation: checkPop 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+@keyframes checkPop {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.03); }
+  100% { transform: scale(1); }
+}
+
+
+/* ── Desktop ── */
+@media (min-width: 640px) {
+  .greeting-name {
+    font-size: 2rem;
+  }
+
+  .container {
+    padding: 0.75rem 1.5rem 3rem;
+  }
+
+  .banner-img {
+    height: 220px;
+  }
+}
