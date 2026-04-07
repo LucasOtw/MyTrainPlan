@@ -1,0 +1,20 @@
+{
+  "name": "Mon Plan 10km",
+  "short_name": "Plan 10K",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#FFFFFF",
+  "theme_color": "#E8458B",
+  "icons": [
+    {
+      "src": "icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "apple-touch-icon.png",
+      "sizes": "180x180",
+      "type": "image/png"
+    }
+  ]
+}

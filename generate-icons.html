@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html><head><meta charset="UTF-8"></head>
+<body>
+<canvas id="c" width="512" height="512"></canvas>
+<script>
+const c = document.getElementById('c');
+const ctx = c.getContext('2d');
+const s = 512;
+
+// Background
+ctx.fillStyle = '#E8458B';
+ctx.beginPath();
+ctx.roundRect(0, 0, s, s, 90);
+ctx.fill();
+
+// Subtle gradient overlay
+const grad = ctx.createLinearGradient(0, 0, s, s);
+grad.addColorStop(0, 'rgba(255,255,255,0.12)');
+grad.addColorStop(1, 'rgba(0,0,0,0.05)');
+ctx.fillStyle = grad;
+ctx.fill();
+
+// "10K" text
+ctx.fillStyle = '#fff';
+ctx.font = '800 200px Poppins, -apple-system, sans-serif';
+ctx.textAlign = 'center';
+ctx.textBaseline = 'middle';
+ctx.fillText('10K', s/2, s/2 + 10);
+
+// Small runner emoji below (as text)
+ctx.font = '60px -apple-system';
+ctx.fillText('🏃‍♀️', s/2, s/2 + 120);
+
+// Download links
+const sizes = [180, 192, 512];
+sizes.forEach(sz => {
+  const c2 = document.createElement('canvas');
+  c2.width = sz; c2.height = sz;
+  c2.getContext('2d').drawImage(c, 0, 0, sz, sz);
+  const a = document.createElement('a');
+  a.href = c2.toDataURL('image/png');
+  a.download = sz === 180 ? 'apple-touch-icon.png' : `icon-${sz}.png`;
+  a.textContent = `Download ${sz}x${sz}`;
+  a.style.display = 'block';
+  a.style.margin = '10px';
+  document.body.appendChild(a);
+});
+</script>
+</body>
+</html>
