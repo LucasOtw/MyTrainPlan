@@ -1,7 +1,7 @@
 (() => {
-  const RACE_DATE = new Date('2026-06-07T00:00:00');
+  const RACE_DATE = new Date('2026-07-26T00:00:00');
   const STORAGE_KEY = 'trainplan_done';
-  const TOTAL_SESSIONS = 27;
+  const TOTAL_SESSIONS = 18;
 
   const TYPE_LABELS = { f: 'Facile', q: 'Qualité', l: 'Longue', r: 'Course' };
   const DAY_FULL = { 'Mar': 'Mardi', 'Jeu': 'Jeudi', 'Sam': 'Samedi', 'Dim': 'Dimanche', 'Ven': 'Vendredi', 'Lun': 'Lundi', 'Mer': 'Mercredi' };
@@ -9,15 +9,12 @@
   const DAY_MAP = { 0: 'Dim', 1: 'Lun', 2: 'Mar', 3: 'Mer', 4: 'Jeu', 5: 'Ven', 6: 'Sam' };
 
   const WEEK_STARTS = [
-    new Date('2026-04-07'),
-    new Date('2026-04-14'),
-    new Date('2026-04-21'),
-    new Date('2026-04-28'),
-    new Date('2026-05-05'),
-    new Date('2026-05-12'),
-    new Date('2026-05-19'),
-    new Date('2026-05-26'),
-    new Date('2026-06-02'),
+    new Date('2026-06-16'),
+    new Date('2026-06-23'),
+    new Date('2026-06-30'),
+    new Date('2026-07-07'),
+    new Date('2026-07-14'),
+    new Date('2026-07-21'),
   ];
 
   const BRAVO_MESSAGES = [
